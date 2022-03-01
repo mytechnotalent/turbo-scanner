@@ -5,20 +5,23 @@ import (
 	"runtime"
 	"sort"
 
-	"github/mytechnotalent/turbo-scanner/routine"
+	"github.com/mytechnotalent/turbo-scanner/routine"
+	"github.com/mytechnotalent/turbo-scanner/services"
+	"github.com/mytechnotalent/turbo-scanner/setup"
 )
 
 func main() {
 	if runtime.GOOS == "linux" {
-		linuxSetup()
+		setup.LinuxSetup()
 	}
 
+	var host string
 	ports := make(chan int, 1000)
 	results := make(chan int)
 	var openports []int
 
 	for i := 0; i < cap(ports); i++ {
-		go routine.Routine(ports, results)
+		go routine.Routine(&host, ports, results)
 	}
 
 	go func() {
@@ -40,11 +43,11 @@ func main() {
 	for _, port := range openports {
 		fmt.Printf("%d open\n", port)
 		if runtime.GOOS == "windows" {
-			fmt.Println(winService(&port))
+			fmt.Println(services.WinService(&port))
 		} else if runtime.GOOS == "darwin" {
-			fmt.Println(macService(&port))
+			fmt.Println(services.MacService(&port))
 		} else if runtime.GOOS == "linux" {
-			fmt.Println(linuxService(&port))
+			fmt.Println(services.LinuxService(&port))
 		}
 	}
 
