@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"runtime"
 	"sort"
 
@@ -15,7 +16,12 @@ func main() {
 		setup.LinuxSetup()
 	}
 
-	var host string
+	if len(os.Args) != 2 {
+		fmt.Println("usage: ./turbo-scanner <host>")
+		return
+	}
+
+	host := os.Args[1]
 	ports := make(chan int, 1000)
 	results := make(chan int)
 	var openports []int
