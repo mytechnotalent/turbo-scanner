@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"runtime"
 	"sort"
+
+	"github/mytechnotalent/turbo-scanner/routine"
 )
 
 func main() {
@@ -16,7 +18,7 @@ func main() {
 	var openports []int
 
 	for i := 0; i < cap(ports); i++ {
-		go routine(ports, results)
+		go routine.Routine(ports, results)
 	}
 
 	go func() {
