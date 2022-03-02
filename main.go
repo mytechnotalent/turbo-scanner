@@ -1,4 +1,4 @@
-// turbo-scanner version 0.1.0
+// turbo-scanner v0.1.0
 
 package main
 
