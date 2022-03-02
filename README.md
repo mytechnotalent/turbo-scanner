@@ -14,12 +14,12 @@ usage: turbo-scanner_010w.exe localhost
 
 # Mac
 ```bash
-usage: turbo-scanner_010m.exe localhost
+usage: ./turbo-scanner_010m localhost
 ```
 
 # Linux
 ```bash
-usage: turbo-scanner_010l.exe localhost
+usage: sudo ./turbo-scanner_010l localhost
 ```
 
 ## Contributing
