@@ -5,7 +5,17 @@ A port scanner and service detection tool that uses 1000 goroutines at once to s
 
 # Windows
 ```bash
-./turbo-scanner localhost
+usage: turbo-scanner_010w.exe localhost
+```
+
+# Mac
+```bash
+usage: turbo-scanner_010m.exe localhost
+```
+
+# Linux
+```bash
+usage: turbo-scanner_010l.exe localhost
 ```
 
 ## License
