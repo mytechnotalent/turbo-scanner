@@ -18,17 +18,17 @@ func main() {
 
 	if runtime.GOOS == "windows" {
 		if len(os.Args) != 2 {
-			fmt.Println("usage: turbo-scanner_010.exe <host>")
+			fmt.Println("usage: turbo-scanner_010w.exe <host>")
 			return
 		}
 	} else if runtime.GOOS == "darwin" {
 		if len(os.Args) != 2 {
-			fmt.Println("usage: ./turbo-scanner_010 <host>")
+			fmt.Println("usage: ./turbo-scanner_010m <host>")
 			return
 		}
 	} else if runtime.GOOS == "linux" {
 		if len(os.Args) != 2 {
-			fmt.Println("usage: sudo ./turbo-scanner_010 <host>")
+			fmt.Println("usage: sudo ./turbo-scanner_010l <host>")
 			return
 		}
 	}
