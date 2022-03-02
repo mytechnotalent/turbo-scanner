@@ -16,9 +16,21 @@ func main() {
 		setup.LinuxSetup()
 	}
 
-	if len(os.Args) != 2 {
-		fmt.Println("usage: ./turbo-scanner <host>")
-		return
+	if runtime.GOOS == "windows" {
+		if len(os.Args) != 2 {
+			fmt.Println("usage: turbo-scanner_010.exe <host>")
+			return
+		}
+	} else if runtime.GOOS == "darwin" {
+		if len(os.Args) != 2 {
+			fmt.Println("usage: ./turbo-scanner_010 <host>")
+			return
+		}
+	} else if runtime.GOOS == "linux" {
+		if len(os.Args) != 2 {
+			fmt.Println("usage: sudo ./turbo-scanner_010 <host>")
+			return
+		}
 	}
 
 	host := os.Args[1]
