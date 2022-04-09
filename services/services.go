@@ -9,7 +9,7 @@
 package services
 
 import (
-	"log"
+	"errors"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -29,21 +29,21 @@ func WinService(port *int) string {
 }
 
 // LinuxService takes a port to obtain the running service on it.
-// It returns the Debian-based Linux service name and respective details.
-func LinuxService(port *int) string {
+// It returns the Debian-based Linux service name and respective details or an error if one occurred.
+func LinuxService(port *int) (string, error) {
 	arg0 := "netstat -tlnp | grep "
 	arg1 := strconv.Itoa(*port)
 	args := arg0 + arg1
 	out, err := exec.Command("sh", "-c", args).Output()
 	if err != nil {
-		log.Fatal("sudo apt install net-tools")
+		return "", errors.New("sudo apt install net-tools")
 	}
-	return string(out)
+	return string(out), nil
 }
 
-// MacService takes a port to obtain the running service on it.
+// MACService takes a port to obtain the running service on it.
 // It returns the Mac service name and respective details.
-func MacService(port *int) string {
+func MACService(port *int) string {
 	arg0 := "lsof -i :"
 	arg1 := strconv.Itoa(*port)
 	args := arg0 + arg1

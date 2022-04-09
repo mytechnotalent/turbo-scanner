@@ -13,7 +13,7 @@ import (
 	"net"
 )
 
-// Routine takes a host and scans 65,535 tcp ports on the respective host.
+// Routine takes a host and scans 65,535 TCP ports on the respective host.
 func Routine(host *string, ports, results chan int) {
 	for port := range ports {
 		address := fmt.Sprintf("%s:%d", *host, port)

@@ -12,7 +12,7 @@ A port scanner and service detection tool that uses 1000 goroutines at once to s
 usage: turbo-scanner_010w.exe localhost
 ```
 
-# Mac
+# MAC
 ```bash
 usage: ./turbo-scanner_010m localhost
 ```
@@ -27,6 +27,13 @@ usage: sudo ./turbo-scanner_010l localhost
 * You may NEVER attempt to sell this, it is free and open source.<br>
 * The authors and publishers assume no responsibility.<br>
 * For educational purposes only.
+
+## Run Tests
+```bash
+go test -v -cover ./...
+go test -coverprofile=coverage.out ./...
+go tool cover -html=coverage.out
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

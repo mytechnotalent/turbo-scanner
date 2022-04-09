@@ -15,14 +15,9 @@ import (
 
 	"github.com/mytechnotalent/turbo-scanner/routine"
 	"github.com/mytechnotalent/turbo-scanner/services"
-	"github.com/mytechnotalent/turbo-scanner/setup"
 )
 
 func main() {
-	if runtime.GOOS == "linux" {
-		setup.LinuxSetup()
-	}
-
 	if runtime.GOOS == "windows" {
 		if len(os.Args) != 2 {
 			fmt.Println("usage: turbo-scanner_010w.exe <host>")
@@ -70,7 +65,7 @@ func main() {
 		if runtime.GOOS == "windows" {
 			fmt.Println(services.WinService(&port))
 		} else if runtime.GOOS == "darwin" {
-			fmt.Println(services.MacService(&port))
+			fmt.Println(services.MACService(&port))
 		} else if runtime.GOOS == "linux" {
 			fmt.Println(services.LinuxService(&port))
 		}
