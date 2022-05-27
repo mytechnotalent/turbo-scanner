@@ -15,6 +15,7 @@ import (
 func TestWinServiceObtainsRunningService(t *testing.T) {
 	// Params
 	port := 1
+	// Calls
 	_, err := WinService(&port)
 	// Asserts
 	if err == nil {
@@ -26,6 +27,7 @@ func TestWinServiceObtainsRunningService(t *testing.T) {
 func TestLinuxServiceObtainsRunningService(t *testing.T) {
 	// Params
 	port := 1
+	// Calls
 	_, err := LinuxService(&port)
 	// Asserts
 	if err == nil {
@@ -37,6 +39,7 @@ func TestLinuxServiceObtainsRunningService(t *testing.T) {
 func TestMACServiceObtainsRunningService(t *testing.T) {
 	// Params
 	port := 1
+	// Calls
 	_, err := MACService(&port)
 	// Asserts
 	if err == nil {
