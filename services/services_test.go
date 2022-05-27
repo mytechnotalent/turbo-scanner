@@ -15,7 +15,11 @@ import (
 func TestWinServiceObtainsRunningService(t *testing.T) {
 	// Params
 	port := 1
-	WinService(&port)
+	_, err := WinService(&port)
+	// Asserts
+	if err == nil {
+		t.Error(err)
+	}
 }
 
 // Verify LinuxService obtains running service.
@@ -33,5 +37,9 @@ func TestLinuxServiceObtainsRunningService(t *testing.T) {
 func TestMACServiceObtainsRunningService(t *testing.T) {
 	// Params
 	port := 1
-	MACService(&port)
+	_, err := MACService(&port)
+	// Asserts
+	if err == nil {
+		t.Error(err)
+	}
 }
