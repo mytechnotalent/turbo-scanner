@@ -1,4 +1,4 @@
-![image](https://github.com/mytechnotalent/turbo-scanner/blob/main/turbo-scanner.png?raw=true)
+![image](https://github.com/mytechnotalent/turbo-scanner/blob/main/turbo-scanner.png?raw=true)u
 
 ## FREE Reverse Engineering Self-Study Course [HERE](https://github.com/mytechnotalent/Reverse-Engineering-Tutorial)
 
