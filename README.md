@@ -7,6 +7,8 @@
 # turbo-scanner
 A port scanner and service detection tool that uses 1000 goroutines at once to scan any hosts IP or FQDN with the sole purpose of testing your own network to ensure there are no malicious services running.
 
+<br>
+
 # Windows
 ```bash
 usage: turbo-scanner_010w.exe localhost
@@ -22,11 +24,15 @@ usage: ./turbo-scanner_010m localhost
 usage: sudo ./turbo-scanner_010l localhost
 ```
 
+<br>
+
 ## Terms Of Use
 * Do NOT use this on any computer you do not own or are not allowed to run this on.<br>
 * You may NEVER attempt to sell this, it is free and open source.<br>
 * The authors and publishers assume no responsibility.<br>
 * For educational purposes only.
+
+<br>
 
 ## Run Tests
 ```bash
@@ -34,6 +40,8 @@ go test -v -cover ./...
 go test -coverprofile=coverage.out ./...
 go tool cover -html=coverage.out
 ```
+
+<br>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
